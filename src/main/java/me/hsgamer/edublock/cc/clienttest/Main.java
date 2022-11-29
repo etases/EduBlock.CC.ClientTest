@@ -51,7 +51,7 @@ public class Main {
 
         var tlsCertReader = Files.newBufferedReader(tlsCertPath);
         var tlsCert = Identities.readX509Certificate(tlsCertReader);
-        SocketAddress endpointAddress = new InetSocketAddress("192.168.1.10", 7002);
+        SocketAddress endpointAddress = new InetSocketAddress("127.0.0.1", 7002);
         ManagedChannel grpcChannel = NettyChannelBuilder.forAddress(endpointAddress)
                 .sslContext(GrpcSslContexts.forClient().trustManager(tlsCert).build()).overrideAuthority("peer1.org0.example.com")
                 .build();
