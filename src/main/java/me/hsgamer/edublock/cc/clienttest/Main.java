@@ -79,7 +79,7 @@ public class Main {
                     .endorse()
                     .submitAsync();
 
-            System.out.println("Submitted update outputPersonal2 1: " + updatePersonalTransaction.getStatus());
+            System.out.println("Submitted update personal 1: " + updatePersonalTransaction.getStatus());
 
             var personal2 = new Personal();
             personal2.setFirstName("Hieu");
@@ -91,7 +91,7 @@ public class Main {
                     .endorse()
                     .submitAsync();
 
-            System.out.println("Submitted update outputPersonal2 2: " + updatePersonalTransaction2.getStatus());
+            System.out.println("Submitted update personal 2: " + updatePersonalTransaction2.getStatus());
 
             byte[] personalBytes1 = contract.evaluateTransaction("getStudentPersonal", "1");
             var outputPersonal1 = genson.deserialize(new String(personalBytes1, StandardCharsets.UTF_8), Personal.class);
